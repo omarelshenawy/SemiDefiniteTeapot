@@ -20,7 +20,7 @@ scatter(p(:,1),p(:,2),s,c);
 % 
 %%
 % data=dlmread('swissroll.dat');
-[x,~,t] = generate_data('swiss',500);
+[x,~,t] = generate_data('swiss',800);
 [~,ind]=sortrows(x);
 t=t(ind,:);
 x=x(ind,:);
@@ -41,10 +41,7 @@ s = 10;
 % c = linspace(1,10,length(p));
 c = t(:,1);
 scatter(p(:,1),p(:,2),s,c);
-
-
-EigenvaluesSDE = eig(x);
-save('Swiss_Roll_Kernel_and_Eig', 'x', 'EigenvaluesSDE', 'data')
+save(
 
 
 
