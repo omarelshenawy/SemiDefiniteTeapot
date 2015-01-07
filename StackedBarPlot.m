@@ -5,7 +5,7 @@ rng(seed)
 %eigenMatrix = eigenMatrix(:,1:5);
 fig = figure;
 hold on
-a = jet
+a = jet;
 [M, N] = size(eigenMatrix);
 [MM,NN] = size(a);
 r = randi([1,MM], 1, N)
@@ -29,7 +29,7 @@ end
 for i = 1:N;
     set(h(i), 'FaceColor', colormatrix(i,:), 'EdgeColor', colormatrix(i,:))
 end
-set(fig, 'Position', [500 500 900 400])
+set(fig, 'Position', [300 300 900 400])
 
 set(gca,'XTick',[0,0.2, 0.4, 0.6, 0.8, 1])
 set(gca,'YTick',[1,2, 3, 4])

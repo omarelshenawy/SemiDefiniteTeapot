@@ -1,7 +1,7 @@
 sigma=1.45;
 gamma = 1/(2*sigma^2);
 % gamma = 0.1;
-Kf = @(x,y)(exp(-(squareform(pdist(x,'euclidean')))*gamma));
+Kf = @(x,y)(exp(-(squareform(pdist(x,'euclidean')).^2)*gamma));
 % da=dlmread('swissroll.dat');
 % da = generate_data('swiss',300);
 [x,~,t] = generate_data('swiss',800);

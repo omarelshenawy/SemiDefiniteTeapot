@@ -1,6 +1,6 @@
 %%
 [train, trLabel, test, testLabel]=loadBinaryUSPS(2,3);
-s = 100;
+s = 200;
 data = [train([1:s end-s:end],:);test([1:s end-s:end],:)];
 data = data-repmat(mean(data),size(data,1),1);
 eta=calc_eta(data,4);
