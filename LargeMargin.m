@@ -1,5 +1,5 @@
 %%
-[train, trLabel, test, testLabel]=loadBinaryUSPS(8,2);
+[train, trLabel, test, testLabel]=loadBinaryUSPS(2,3);
 s = 100;
 data = [train([1:s end-s:end],:);test([1:s end-s:end],:)];
 data = data-repmat(mean(data),size(data,1),1);

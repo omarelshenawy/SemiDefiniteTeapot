@@ -44,7 +44,7 @@ scatter(p(:,1),p(:,2),s,c);
 
 
 EigenvaluesSDE = eig(x);
-save('Swiss_Roll_Kernel_and_Eig', 'x', 'EigenvaluesSDE', 'data')
+save('Swiss_Roll_Kernel_and_Eig2', 'x', 'EigenvaluesSDE', 'data')
 
 
 
