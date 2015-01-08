@@ -2,15 +2,16 @@
 %%
 aa = 8; %numbers to be compared
 bb = 9;
-[train, trLabel, test, testLabel]=loadBinaryUSPS(aa,bb);
 n = 10;
 for ii = 1:n
-    p = randperm(length(train));
-    train = train(p);
-    trLabel = trLabel(p);
-    p2 = randperm(length(train));
-    test = test(p2);
-    testLabel = testLabel(p2);
+    [train, trLabel, test, testLabel]=loadBinaryUSPS(aa,bb);
+    M = train;
+    p = randperm(size(train,1));
+    train = train(p,:);
+    trLabel = trLabel(p,:);
+    p2 = randperm(size(test,1));
+    test = test(p2,:);
+    testLabel = testLabel(p2,:);
 
     s = 405;
     s2 = 45;
