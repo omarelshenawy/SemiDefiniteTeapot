@@ -3,10 +3,10 @@
 aa = 1; %numbers to be compared
 bb = 2;
 n = 10;
-for ii = 1:n
+for ii = 10:n
     [train, trLabel, test, testLabel]=loadBinaryUSPS(aa,bb);
     M = train;
-    p = randperm(size(train,1));
+    p = randperm(size(train,1))
     train = train(p,:);
     trLabel = trLabel(p,:);
     p2 = randperm(size(test,1));
