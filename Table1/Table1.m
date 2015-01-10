@@ -33,7 +33,7 @@ for ii = 1:10
     
     sigma = 1; % For large margin
     gamma = 1/(2*sigma^2);
-    Kf = @(x,y)(exp(-(x-y)*(x-y)'*gamma));
+    Kf = @(x,y) rbf(x, y, sigma);
     SVMStructG = svmtrain(Training,TrainingLabels,'kernel_function',Kf,'autoscale',false);
     groupGauss = svmclassify(SVMStructG,TestPoints);
 
