@@ -1,4 +1,4 @@
-function [eta sigma]= calc_eta_and_sigma(A,k)
+function [eta sigma]= calc_eta(A,k)
     N = size(A,1);
     assert(N>k,'Cannot find %d neighbours in a set of only %d datapoints',k,N);
     distmatrix = squareform(pdist(A));
