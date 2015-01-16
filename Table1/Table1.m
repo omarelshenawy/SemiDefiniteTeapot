@@ -8,8 +8,9 @@ SDEerrorrate = 0;
 Linearerrorrate = 0;
 Polyerrorrate = 0;
 Gaussianerrorrate = 0;
+sigmaList = zeros(1,10);
 for ii = 1:10
-    Numbers ='12';
+    Numbers ='89';
     filename = strcat('Large_Margin_',Numbers,'_',num2str(ii));
     load(filename)
 
@@ -31,7 +32,10 @@ for ii = 1:10
     SVMStruct = svmtrain(Training,TrainingLabels,'kernel_function',Kf,'autoscale',false);
     groupPoly = svmclassify(SVMStruct,TestPoints);
     
-    sigma = 5.5; % For large margin
+    
+    [~, sigma]= calc_eta(data,4);
+     
+    sigmaList(ii) = sigma;
     gamma = 1/(2*sigma^2);
     Kf = @(x,y) rbf(x, y, sigma);
     SVMStructG = svmtrain(Training,TrainingLabels,'kernel_function',Kf,'autoscale',false);
@@ -41,6 +45,7 @@ for ii = 1:10
     Linearerrorrate = Linearerrorrate + sum(facit~=groupLin)/length(facit);
     Polyerrorrate = Polyerrorrate + sum(facit~=groupPoly)/length(facit);
     Gaussianerrorrate = Gaussianerrorrate + sum(facit~=groupGauss)/length(facit);
+    ii
 end
 
 SDEerrorrate = SDEerrorrate/10*100 % The average error rate in percent. 
