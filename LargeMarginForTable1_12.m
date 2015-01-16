@@ -1,12 +1,12 @@
 % For calculating table 1, Anders
 %%
 aa = 1; %numbers to be compared
-bb = 2;
+bb = 3;
 n = 10;
 for ii = 10:n
     [train, trLabel, test, testLabel]=loadBinaryUSPS(aa,bb);
     M = train;
-    p = randperm(size(train,1))
+    p = randperm(size(train,1));
     train = train(p,:);
     trLabel = trLabel(p,:);
     p2 = randperm(size(test,1));

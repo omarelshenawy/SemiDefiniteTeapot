@@ -32,7 +32,8 @@ eigenMatrix(2,:) = sort(eig(ker), 'descend');
 
 %sigma = 1.45;
 %sigma = 1541; % For Teapot
-sigma = 5.5; % For large margin
+[~, sigma]= calc_eta_and_sigma(data,4)
+%sigma = 5.5; % For large margin
 gamma = 1/(2*sigma^2);
 Kf = @(x,y)(exp(-(squareform(pdist(x,'euclidean').^2))*gamma));
 da = data;

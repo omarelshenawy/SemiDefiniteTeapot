@@ -31,7 +31,7 @@ for ii = 1:10
     SVMStruct = svmtrain(Training,TrainingLabels,'kernel_function',Kf,'autoscale',false);
     groupPoly = svmclassify(SVMStruct,TestPoints);
     
-    sigma = 1; % For large margin
+    sigma = 5.5; % For large margin
     gamma = 1/(2*sigma^2);
     Kf = @(x,y) rbf(x, y, sigma);
     SVMStructG = svmtrain(Training,TrainingLabels,'kernel_function',Kf,'autoscale',false);
