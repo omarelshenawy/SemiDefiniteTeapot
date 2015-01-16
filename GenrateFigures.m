@@ -5,14 +5,14 @@ close all
 
 %%
 %load('Teapot_Kernel_and_Eig')
-%load('Teapot180_Kernel_and_Eig')
+load('Teapot180_Kernel_and_Eig')
 %load('Swiss_Roll_Kernel_and_Eig')
-load('Large_Margin_Kernel200')
+%load('Large_Margin_Kernel200')
 
 %%
-%EigenvaluesSDE = eig(x);
+EigenvaluesSDE = eig(x);
 
-EigenvaluesSDE = eig(kern); % Large_Margin
+%EigenvaluesSDE = eig(kern); % Large_Margin
 eigenMatrix = zeros(3, length(EigenvaluesSDE));
 eigenMatrix(4,:) = EigenvaluesSDE; 
 

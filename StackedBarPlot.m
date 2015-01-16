@@ -8,12 +8,12 @@ hold on
 a = jet;
 [M, N] = size(eigenMatrix);
 [MM,NN] = size(a);
-r = randi([1,MM], 1, N)
+r = randi([1,MM], 1, N);
 colormatrix = zeros(N,3);
 for i = 1:N
     colormatrix(i,:) = a(r(i),:);
 end
-colormatrix
+
 if M > 1
     
     for ii = 1:M
