@@ -10,7 +10,7 @@ Polyerrorrate = 0;
 Gaussianerrorrate = 0;
 sigmaList = zeros(1,10);
 for ii = 1:10
-    Numbers ='89';
+    Numbers ='13';
     filename = strcat('Large_Margin_',Numbers,'_',num2str(ii));
     load(filename)
 
@@ -33,7 +33,7 @@ for ii = 1:10
     groupPoly = svmclassify(SVMStruct,TestPoints);
     
     
-    [~, sigma]= calc_eta(data,4);
+    [~, sigma]= calc_eta_and_sigma(data,4);
      
     sigmaList(ii) = sigma;
     gamma = 1/(2*sigma^2);
