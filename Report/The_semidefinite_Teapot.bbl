@@ -1,0 +1,9 @@
+\begin{thebibliography}{1}
+
+\bibitem{weinberger04}
+K.Q. Weinberger, F.~Sha, and L.~K. Saul.
+\newblock Learning a kernel matrix for nonlinear dimensionality reduction.
+\newblock In {\em Proceedings of the Twenty First International Conference on
+  Machine Learning (ICML-04)}, pages 839--846, 2004.
+
+\end{thebibliography}
