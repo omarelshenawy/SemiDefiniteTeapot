@@ -24,15 +24,15 @@ ker = Kf(da,da);
 eigenMatrix(3,:) = sort(eig(ker), 'descend');
 
 p=4;
-p = 2; % For large margin
+%p = 2; % For large margin
 Kf = @(x,y)PolyKer( x,y,p);
 da = data;
 ker = Kf(da,da);
 eigenMatrix(2,:) = sort(eig(ker), 'descend');
 
 %sigma = 1.45;
-%sigma = 1541; % For Teapot
-[~, sigma]= calc_eta_and_sigma(data,4)
+sigma = 1541; % For Teapot
+%[~, sigma]= calc_eta_and_sigma(data,4)
 %sigma = 5.5; % For large margin
 gamma = 1/(2*sigma^2);
 Kf = @(x,y)(exp(-(squareform(pdist(x,'euclidean').^2))*gamma));
